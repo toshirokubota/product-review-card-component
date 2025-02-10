@@ -1,0 +1,171 @@
+
+.montserrat {
+    font-family: "Montserrat";
+    font-optical-sizing: auto;
+    /* font-weight: 500;
+    font-style: normal; */
+}
+/* .montserrat-bold {
+    font-family: "Montserrat";
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+} */
+
+.Fraunces {
+    font-family: "Fraunces";
+    font-optical-sizing: auto;
+    /* font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+    "SOFT" 0,
+    "WONK" 0; */
+}
+
+:root {
+    box-sizing: border-box;
+    --dark-cyan: hsl(158, 36%, 37%);
+    --darker-cyan: hsl(158, 42%, 18%);
+    --cream: hsl(30, 38%, 92%);
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    font-family: montserrat, serif;
+    /* color: var(--very-dark-blue); */
+    font-size: 16px;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 1rem; */
+    align-items: center;
+    background-color: var(--cream);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 48em;
+    width: calc(100% - 2rem);
+    margin: 1.5rem auto;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+.product-img {
+    font-size: 0;
+}
+.product-img img {
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+}
+.product-description {
+    background-color: var(--white);
+    padding: 1rem;
+}
+.product-description > * + * {
+    margin: 0.75rem 0;
+}
+.category {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--dark-grayish-blue);
+}
+.product-name {
+    font-family: Fraunces;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 32px;
+    color:var(--very-dark-blue);
+}
+.description {
+    font-size: 14px;
+    line-height: 23px;
+    color: var(--dark-grayish-blue);
+    width: 95%;
+}
+.price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+.price > .new-price {
+    font-family: Fraunces;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--dark-cyan);
+}
+.price > .old-price {
+    text-decoration: line-through;
+    font-size: 13px;
+    color:var(--dark-grayish-blue);
+    /* padding-left: 1rem; */
+}
+.cart-button::before {
+    display: inline-block;
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: relative;
+    left: -1rem;
+    background-image: url('./images/icon-cart.svg');
+    /* background-position: top 8px right 10px; */
+    background-repeat: no-repeat;
+}
+.cart-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--dark-cyan);
+    border-radius: 0.5rem;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+}
+.cart-button:hover, .cart-button:focus {
+    background-color: var(--darker-cyan);
+}
+footer {
+    margin-top: 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+        justify-content: center;
+    }
+    .container {
+        flex-direction: row;
+        align-items: normal;
+    }
+    .container > * {
+        flex: 1 1 50%;
+    }
+    .product-img img {
+        width: 100%;
+        border-radius: 1rem 0 0 1rem;
+    }
+    .product-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-radius: 0 1rem 1rem 0;
+    }
+}
